@@ -22,6 +22,7 @@ app.use(session({
 }));
 
 if (process.env.NODE_ENV === 'production') {
+    app.use(cors());
     app.use(express.static(path.resolve(__dirname, 'public')));
 } else {
     
@@ -47,10 +48,6 @@ app.get('*', function(req, res) {
     
 });
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
 
 app.listen(port, () => {
     console.log(`listening at port: ${port}`)

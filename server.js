@@ -22,7 +22,11 @@ app.use(session({
 }));
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve(__dirname, 'public')));
+    app.use(cors({
+        origin: ['https://zviarecipes-backend.herokuapp.com'],
+        credentials: true,
+    }));
+    // app.use(express.static(path.resolve(__dirname, 'public')));
 } else {
     
     const corsOptions = {

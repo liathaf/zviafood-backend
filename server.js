@@ -41,10 +41,10 @@ app.use('/api/auth', authRoutes);
 
 const port = process.env.PORT || 3030;
 
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+// app.get('*', function(req, res) {
+//     res.sendFile(path.join(__dirname, 'public/index.html'));
     
-});
+// });
 
 app.listen(port, () => {
     console.log(`listening at port: ${port}`)

@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     
     const corsOptions = {
-        origin: ['http://127.0.0.1:4200', 'http://localhost:4200' , 'http://127.0.0.1:4000' , 'http://localhost:4000'],
+        origin: ['http://127.0.0.1:4200', 'http://localhost:4200' , 'http://127.0.0.1:4000' , 'http://localhost:4000' , "https://zviacooking.co.il"],
         credentials: true,
     };
     app.use(cors(corsOptions));

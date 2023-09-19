@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     
     const corsOptions = {
-        origin: ['http://127.0.0.1:4200', 'http://localhost:4200' , 'http://127.0.0.1:4000' , 'http://localhost:4000' , "https://zviacooking.co.il"],
+        origin: ['http://127.0.0.1:4200', 'http://localhost:4200' , 'http://127.0.0.1:4000' , 'http://localhost:4000'],
         credentials: true,
     };
     app.use(cors(corsOptions));
@@ -43,7 +43,7 @@ app.use('/api/auth', authRoutes);
 const port = process.env.PORT || 3030;
 
 app.get('*', function(req, res) {
-    // res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
     res.end()
     
 });
